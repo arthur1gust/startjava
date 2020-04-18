@@ -1,20 +1,21 @@
 public class Variable {
 	public static void main(String[] args) {
-		byte a = 4;
-		short b = 4;
-		int c = 2400;
-		long d = 3700;
-		float e = 433.232F;
-		double f = -755.32324;
-		char ch=102;
-		is boolean h = true;
-		System.out.println(a);
-		System.out.println(b);
-		System.out.println(c);
-		System.out.println(d);
-		System.out.println(e);
-		System.out.println(f);
-		System.out.println(h);
-		System.out.println(ch);
+		byte size = 38;
+		short weight = 24;
+		int height = 2;
+		long age = 3700;
+		float length = 433.232F;
+		double width = 755.32324;
+		char sign = 102;
+		boolean male = true;
+
+		System.out.println(age);
+		System.out.println(weight);
+		System.out.println(height);
+		System.out.println(age);
+		System.out.println(length);
+		System.out.println(width);
+		System.out.println(sign);
+		System.out.println(male);
 	}
 }

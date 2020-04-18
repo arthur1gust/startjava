@@ -3,6 +3,7 @@ public class Cycle {
 		for (int i = 1; i <= 20; i++) {
 			System.out.println(i);
 		}
+
 		int sum = 0;
 		int i = 9;
 		do {
@@ -10,7 +11,9 @@ public class Cycle {
 				i = i + 2;
 				sum += i;
 			}
-		} while(i < 19);
+		}
+
+		 while(i < 19);
 		System.out.println(sum);
 		int k = 6;
 		while (k > -7) {
