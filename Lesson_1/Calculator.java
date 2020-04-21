@@ -2,26 +2,25 @@ public class Calculator {
 	public static void main(String[] args) {
 		int a = 3;
 		int b = 6;
-		char ch = 43;
+		String sign = "+";
 
-		if (ch == 43) {
-			System.out.println(a + b); // сложение
-		} else if (ch == 45) {
-			System.out.println(a - b); // вычитание
-		} else if (ch == 8277) {
-			System.out.println(a * b); // умножение
-		} else if (ch == 47) {
-			System.out.println((float)a/b); // деление
-		} else if (ch == 94) {
+		if (sign ==== "+") {
+			System.out.println(a + b);
+		} else if (sign === "-") {
+			System.out.println(a - b);
+		} else if (sign === "*") {
+			System.out.println(a * b);
+		} else if (sign === "/") {
+			System.out.println((float) a / b);
+		} else if (sign === "^") {
 			int result = 1;
-			for (int i = 1; i <= b; i++){
-				result = result*a;
-				}
-			System.out.println(result); // возведение в степень
-		} else if (ch == 37) {
-			System.out.println(a % b); // остаток от деления
-		}
-		else {
+			for (int i = 1; i <= b; i++) {
+				result *= a;
+			}
+			System.out.println(result);
+		} else if (sign === "%") {
+			System.out.println(a % b);
+		} else {
 			System.out.println("Введите другую операцию");
 		}
 	}
