@@ -13,7 +13,7 @@ public class Cycle {
 			} else {
 				sum = 0;
 			}
-		} while(i < 19);
+		} while (i < 19);
 		System.out.println(sum);
 
 		int k = 6;
