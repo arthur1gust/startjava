@@ -7,14 +7,15 @@ public class Cycle {
 		int sum = 0;
 		int i = 9;
 		do {
-			if(i % 2 != 0) {
+			if (i % 2 != 0) {
 				i = i + 2;
 				sum += i;
+			} else {
+				sum = 0;
 			}
-		}
-
-		 while(i < 19);
+		} while(i < 19);
 		System.out.println(sum);
+
 		int k = 6;
 		while (k > -7) {
 			System.out.println(k + " ");

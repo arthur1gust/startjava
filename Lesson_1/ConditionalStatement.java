@@ -1,20 +1,20 @@
 public class ConditionalStatement {
 	public static void main(String[] args) {
-		
 		int age = 28;
-		boolean gender = true;
-		double height = 2;
-		String firstWord = "M";
 
 		if (age > 20) {
 			System.out.println ("Vam bolshe 20 let");
 		}
 
+		boolean gender = true;
+		
 		if (gender) {
 			System.out.println ("You are man!");
 		} else if (gender = false) {
 			System.out.println ("You are woman!");
 		}
+
+		double height = 2;
 
 		if (height < 1.80) {
 			System.out.println ("You are short");
@@ -22,9 +22,11 @@ public class ConditionalStatement {
 			System.out.println ("You are tall!");
 		}
 
-		if (firstWord == "M") {
+		String firstNameLetter = "M";
+
+		if (firstNameLetter == "M") {
 			System.out.println ("Your name M...");
-		} else if (firstWord == "I") {
+		} else if (firstNameLetter == "I") {
 			System.out.println ("Your name I...");
 		} else {
 			System.out.println ("Your name ...");
