@@ -1,23 +1,23 @@
-public class WolfTest {
-	public static void main(String[] args) {
-		Wolf one = new Wolf();
-		one.age = 3;
-		one.male_gender = true;
-		one.color = "red";
-		one.name = "Rex";
-		one.weight = 13;
-		one.displayInfo();
+public class Wolf {
+	boolean male_gender = true;
+	String name = "reks";
+	double weight = 20.6;
+	int age = 3;
+	String color = "black";
+
+	public void go(){
+		System.out.print("Going...\n");
 	}
-}
-
-class Wolf {
-	boolean male_gender;
-	String name;
-	double weight;
-	int age;
-	String color;
-
-	void displayInfo() {
-		System.out.println(age);
+	public void sit(){
+		System.out.print("Sitting...\n");
+	}
+	public void run(){
+		System.out.print("Running...\n");
+	}
+	public void howl(){
+		System.out.print("Howling...\n");
+	}
+	public void hunt(){
+		System.out.print("Hunting...\n");
 	}
 }
