@@ -1,9 +1,34 @@
 public class Wolf {
-	boolean maleGender = true;
-	String name = "reks";
-	double weight = 20.6;
-	int age = 3;
-	String color = "black";
+	private String maleGender = "man";
+	private String name = "reks";
+	private double weight = 20.6;
+	private int age = 3;
+	private String color = "black";
+
+	public String getMaleGender() {
+		return maleGender;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public double getWeight() {
+		return weight;
+	}
+
+	void setAge(int age) {
+		int sum = age - 8;
+		if(sum > 0) {
+			System.out.println("Некорректный возраст");
+		} else {
+			this.age = age;
+		}
+	}
+
+	public String getColor() {
+		return color;
+	}
 
 	public void go() {
 		System.out.print("Going...\n");
