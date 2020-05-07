@@ -1,9 +1,9 @@
 public class Wolf {
-	private String maleGender = "man";
-	private String name = "reks";
-	private double weight = 20.6;
-	private int age = 3;
-	private String color = "black";
+	private String maleGender;
+	private String name;
+	private double weight;
+	private int age;
+	private String color;
 
 	public String getMaleGender() {
 		return maleGender;
