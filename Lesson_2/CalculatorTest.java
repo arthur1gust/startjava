@@ -9,7 +9,7 @@ public class CalculatorTest {
 		clc.setA(scan.nextInt());
 
 		System.out.print("Vvedite operator: ");
-		char operator = scan.next().charAt(0);
+		sign = clc.setSign(scan.next());
 
 		System.out.print("Vvedite pervoe chislo: ");
 		clc.setB(scan.nextInt());
