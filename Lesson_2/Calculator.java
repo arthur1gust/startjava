@@ -18,34 +18,35 @@ public class Calculator {
 		this.b = b;
 	}
 
-	public void calculate(int a,int b,char sign) {
-		double output;
+	public static int calculate(int a,int b,char sign) {
+		int output;
 		switch (sign) {
-			case "+":
+			case '+':
 				output = a + b;
 			break;
-			case "-":
+			case '-':
 				output = a - b;
 			break;
-			case "*":
+			case '*':
 				output = a * b;
 			break;
-			case "/":
+			case '/':
 				output = a / b;
 			break;
-			case "^":
+			case '^':
 				int result = 1;
 				for (int i = 1; i <= b; i++) {
 					result *= a;
 				}
 				output = result;
 			break;
-			case "%":
+			case '%':
 				output = a % b;
 			break;
 			default:
 				System.out.println("Введите другую операцию");
+				output = calculate(a, b, sign);
 		}
-		System.out.println(a+" "+sign+" "+b+": "+output);
+		return output;
 	}
 }
