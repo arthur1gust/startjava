@@ -1,6 +1,7 @@
 public class Calculator {
-		int a;
-		int b;
+	private	int a;
+	private	int b;
+	private	char sign;
 
 	public int getA() {
 		return a;
@@ -18,35 +19,43 @@ public class Calculator {
 		this.b = b;
 	}
 
-	public static int calculate(int a,int b,char sign) {
-		int output;
+	public char getSign() {
+		return sign;
+	}
+
+	public void setSign(char sign) {
+		this.sign = sign;
+	}
+
+	public int calculate() {
+		int result;
 		switch (sign) {
 			case '+':
-				output = a + b;
-			break;
+				result = a + b;
+				break;
 			case '-':
-				output = a - b;
-			break;
+				result = a - b;
+				break;
 			case '*':
-				output = a * b;
-			break;
+				result = a * b;
+				break;
 			case '/':
-				output = a / b;
-			break;
+				result = a / b;
+				break;
 			case '^':
-				int result = 1;
+				int total = 1;
 				for (int i = 1; i <= b; i++) {
-					result *= a;
+					total *= a;
 				}
-				output = result;
-			break;
+				result = total;
+				break;
 			case '%':
-				output = a % b;
-			break;
+				result = a % b;
+				break;
 			default:
 				System.out.println("Введите другую операцию");
-				output = calculate(a, b, sign);
+				break;
 		}
-		return output;
+		return result;
 	}
 }
