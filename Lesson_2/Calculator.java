@@ -2,6 +2,7 @@ public class Calculator {
 	private	int a;
 	private	int b;
 	private	char sign;
+	private int result;
 
 	public int getA() {
 		return a;
@@ -27,8 +28,12 @@ public class Calculator {
 		this.sign = sign;
 	}
 
+	public int getResult() {
+		return result;
+	}
+
 	public int calculate() {
-		int result;
+		result = 0;
 		switch (sign) {
 			case '+':
 				result = a + b;
@@ -43,11 +48,10 @@ public class Calculator {
 				result = a / b;
 				break;
 			case '^':
-				int total = 1;
+				int total = 0;
 				for (int i = 1; i <= b; i++) {
 					total *= a;
 				}
-				result = total;
 				break;
 			case '%':
 				result = a % b;
