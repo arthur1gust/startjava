@@ -8,9 +8,6 @@ public class CalculatorTest {
 		String answer;
 
 		do {
-		System.out.print("Will you want continue? [yes/no]: ");
-		answer = scan.nextLine();
-
 		System.out.print("Enter first number: ");
 		calc.setA(scan.nextInt());
 
@@ -21,6 +18,10 @@ public class CalculatorTest {
 		calc.setSign(scan.next().charAt(0));
 
 		System.out.println(calc.getResult());
+
+		System.out.print("Will you want continue? [yes/no]: ");
+		scan.nextLine();
+		answer = scan.nextLine();
 		}
 		while (answer.equalsIgnoreCase(yesAnswer));
 	}
