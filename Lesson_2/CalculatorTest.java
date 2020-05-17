@@ -17,7 +17,7 @@ public class CalculatorTest {
 		System.out.print("Enter operation: ");
 		calc.setSign(scan.next().charAt(0));
 
-		System.out.println(calc.getResult());
+		System.out.println(calc.calculate());
 
 		System.out.print("Will you want continue? [yes/no]: ");
 		scan.nextLine();
