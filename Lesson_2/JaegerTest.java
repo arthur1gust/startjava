@@ -15,5 +15,6 @@ public class JaegerTest {
 		System.out.println(jaegerOne_2.drift());
 		jaegerOne_2.setMark("Mark-1");
 		System.out.println(jaegerOne_2.getMark());
+//		Jaeger robot = new Jaeger("Gipsy Avenger", "Mark-6", "United States of America");	
 	}
 }
