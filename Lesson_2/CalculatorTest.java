@@ -22,7 +22,7 @@ public class CalculatorTest {
 			scan.nextLine();
 
 			while (!scan.hasNext("yes") && !scan.hasNext("no")) {
-				System.out.print("You entered: " + scan.nextLine() + ", Will you want continue? [yes/no]: ");
+				System.out.print("You entered: " + scan.nextLine() + ", Enter 'yes' or 'no': ");
 			}
 			answer = scan.nextLine();
 		} while (answer.equalsIgnoreCase("yes"));
