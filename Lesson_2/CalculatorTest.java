@@ -4,7 +4,6 @@ public class CalculatorTest {
 	public static void main(String[] args) {
 		Calculator calc = new Calculator();
 		Scanner scan = new Scanner(System.in);
-		String answer;
 
 		do {
 			System.out.print("Enter first number: ");
@@ -22,9 +21,9 @@ public class CalculatorTest {
 			scan.nextLine();
 
 			while (!scan.hasNext("yes") && !scan.hasNext("no")) {
-				System.out.print("You entered: " + scan.nextLine() + ", Enter 'yes' or 'no': ");
+				System.out.print("Will you want continue? [yes/no]: ");
+				scan.nextLine();
 			}
-			answer = scan.nextLine();
-		} while (answer.equalsIgnoreCase("yes"));
+		} while (scan.nextLine().equalsIgnoreCase("yes"));
 	}
 }
