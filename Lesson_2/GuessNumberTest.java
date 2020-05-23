@@ -27,7 +27,7 @@ public class GuessNumberTest {
 			numberFirst = playerFirst.getNumber();
 			numberSecond = playerSecond.getNumber();
 	
-			numberComputer = (int) (Math.random() * 2);
+			numberComputer = (int) (Math.random() * 10);
 			System.out.println(numberComputer);
 	
 			sumFirst = numberComputer - numberFirst;
