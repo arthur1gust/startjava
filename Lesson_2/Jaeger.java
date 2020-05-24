@@ -1,5 +1,4 @@
 public class Jaeger {
-	private String robotName;
 	private String modelName;
 	private String mark;
 	private String origin;
@@ -18,14 +17,6 @@ public class Jaeger {
 		this.modelName = modelName;
 	}
 
-	public String getRobotName() {
-		return robotName;
-	}
-
-	public void setRobotName(String robotName) {
-		this.robotName = robotName;
-	}
-
 	public String getMark() {
 		return mark;
 	}
@@ -33,17 +24,13 @@ public class Jaeger {
 	public void setMark(String mark) {
 		this.mark = mark;
 	}
-/*
+
 	public Jaeger(String modelName, String mark, String origin){
 		this.modelName = modelName;
 		this.mark = mark;
 		this.origin = origin;
 	}
 
-	public String toString() {
-		return "Jaeger [modelName=" + modelName + ", mark=" + mark +", origin=" + origin +" ]";
-	}
-*/
 	boolean drift() {
 		System.out.println("You completed drift");
 		return true;
@@ -55,9 +42,5 @@ public class Jaeger {
 
 	String scanKaiju() {
 		return "nothing";
-	}
-
-	void useVortexCannon() {
-
 	}
 }
