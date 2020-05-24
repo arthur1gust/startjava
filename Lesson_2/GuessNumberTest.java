@@ -6,12 +6,12 @@ public class GuessNumberTest {
 		Scanner scan = new Scanner(System.in);
 		Player playerFirst = new Player();
 		Player playerSecond = new Player();
+		GuessNumber randomNumber = new GuessNumber();
 		int numberFirst;
 		int numberSecond;
 		int sumFirst;
 		int sumSecond;
-		int numberComputer;
-		String answer;
+		int computerNumber;
 
 		do {
 			System.out.print("Enter name first player: ");
@@ -26,12 +26,12 @@ public class GuessNumberTest {
 
 			numberFirst = playerFirst.getNumber();
 			numberSecond = playerSecond.getNumber();
+			computerNumber = randomNumber.getNumberComputer();
+
+			System.out.println(randomNumber.getNumberComputer());
 	
-			numberComputer = (int) (Math.random() * 10);
-			System.out.println(numberComputer);
-	
-			sumFirst = numberComputer - numberFirst;
-			sumSecond = numberComputer - numberSecond;
+			sumFirst = computerNumber - numberFirst;
+			sumSecond = computerNumber - numberSecond;
 			
 			if (sumFirst == 0) {
 				System.out.println("First player won! ");
