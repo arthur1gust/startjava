@@ -48,9 +48,9 @@ public class Calculator {
 				result = a / b;
 				break;
 			case '^':
-				int total = 0;
+				result = 1;
 				for (int i = 1; i <= b; i++) {
-					total *= a;
+					result *= a;
 				}
 				break;
 			case '%':
