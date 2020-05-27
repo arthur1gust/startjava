@@ -14,7 +14,7 @@ public class Jaeger {
 		this.height = height;
 		this.weight = weight;
 	}
-	
+
 	public String getModelName() {
 		return modelName;
 	}
