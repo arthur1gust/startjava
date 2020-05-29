@@ -10,19 +10,19 @@ public class GuessNumber {
 		return numberComputer;
 	}
 
-	public String nameFirst() {
+	public String changeNameFirst() {
 		String nameFirst = playerFirst.getName();
 		return "First player name: " + nameFirst;
 	}
 
-	public String nameSecond() {
+	public String changeNameSecond() {
 		String nameSecond = playerSecond.getName();
 		return "Second player name: " + playerSecond;
 	}
 
 	public String chekNumber() {
-		System.out.println(nameFirst());
-		System.out.println(nameSecond());
+		System.out.println(changeNameFirst());
+		System.out.println(changeNameSecond());
 		int sumFirst = random() - playerFirst.getNumber();
 		int sumSecond = random() - playerSecond.getNumber();
 		String resultFirst;
