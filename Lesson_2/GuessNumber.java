@@ -1,8 +1,12 @@
 import java.util.Scanner;
 
 public class GuessNumber {
-	Player playerFirst = new Player("Ivan", 4);
-	Player playerSecond = new Player("Vasya", 14);
+	String nameFirst;
+	String nameSecond;
+	int numberFirst;
+	int numberSecond;
+	Scanner scan = new Scanner(System.in);
+	GuessNumberTest gnt = new GuessNumberTest();
 
 	public int random() {
 		int numberComputer;
@@ -11,16 +15,33 @@ public class GuessNumber {
 	}
 
 	public String changeNameFirst() {
-		String nameFirst = playerFirst.getName();
-		return "First player name: " + nameFirst;
+		nameFirst = scan.nextLine();
+		System.out.print("Enter first name");
+		return nameFirst;
 	}
 
 	public String changeNameSecond() {
-		String nameSecond = playerSecond.getName();
-		return "Second player name: " + playerSecond;
+		nameSecond = scan.nextLine();
+		System.out.print("Enter second name");
+		return nameSecond;
 	}
 
-	public String chekNumber() {
+	public int changeNumberFirst() {
+		numberFirst = scan.nextInt();
+		System.out.print("Enter first number");
+		return numberFirst;
+	}
+
+	public int changeNumberSecond() {
+		numberSecond = scan.nextInt();
+		System.out.print("Enter second number");
+		return numberSecond;
+	}
+
+	Player playerFirst = new Player(changeNameFirst(), changeNumberFirst());
+	Player playerSecond = new Player(changeNameSecond(), changeNumberSecond());
+
+	public String start() {
 		System.out.println(changeNameFirst());
 		System.out.println(changeNameSecond());
 		int sumFirst = random() - playerFirst.getNumber();

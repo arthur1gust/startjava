@@ -3,10 +3,10 @@ import java.util.Scanner;
 public class GuessNumberTest {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
-		GuessNumber randomNumber = new GuessNumber();
+		GuessNumber gn = new GuessNumber();
 
 		do {
-			System.out.println(randomNumber.chekNumber());
+			System.out.println(gn.start());
 
 			System.out.print("Will you want continue? [yes/no]: ");
 			scan.nextLine();
