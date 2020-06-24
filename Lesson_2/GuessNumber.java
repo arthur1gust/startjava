@@ -8,31 +8,31 @@ public class GuessNumber {
 	Scanner scan = new Scanner(System.in);
 	GuessNumberTest gnt = new GuessNumberTest();
 
-	public int random() {
+	private int random() {
 		int numberComputer;
 		numberComputer = (int) (Math.random() * 10);
 		return numberComputer;
 	}
-
-	public String changeNameFirst() {
+/*
+	private String changeNameFirst() {
 		nameFirst = scan.nextLine();
 		System.out.print("Enter first name");
 		return nameFirst;
 	}
 
-	public String changeNameSecond() {
+	private String changeNameSecond() {
 		nameSecond = scan.nextLine();
 		System.out.print("Enter second name");
 		return nameSecond;
 	}
 
-	public int changeNumberFirst() {
+	private int changeNumberFirst() {
 		numberFirst = scan.nextInt();
 		System.out.print("Enter first number");
 		return numberFirst;
 	}
 
-	public int changeNumberSecond() {
+	private int changeNumberSecond() {
 		numberSecond = scan.nextInt();
 		System.out.print("Enter second number");
 		return numberSecond;
@@ -40,12 +40,10 @@ public class GuessNumber {
 
 	Player playerFirst = new Player(changeNameFirst(), changeNumberFirst());
 	Player playerSecond = new Player(changeNameSecond(), changeNumberSecond());
-
-	public String start() {
-		System.out.println(changeNameFirst());
-		System.out.println(changeNameSecond());
-		int sumFirst = random() - playerFirst.getNumber();
-		int sumSecond = random() - playerSecond.getNumber();
+*/
+	private String start() {
+		int sumFirst = random() - gnt.playerFirst.getNumber();
+		int sumSecond = random() - gnt.playerSecond.getNumber();
 		String resultFirst;
 		if (sumFirst == 0) {
 			resultFirst = "First player won!";

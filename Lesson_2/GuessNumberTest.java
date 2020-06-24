@@ -5,6 +5,9 @@ public class GuessNumberTest {
 		Scanner scan = new Scanner(System.in);
 		GuessNumber gn = new GuessNumber();
 
+		Player playerFirst = new Player(scan.nextLine(), scan.nextInt());
+		Player playerSecond = new Player(scan.nextLine(), scan.nextInt());
+
 		do {
 			System.out.println(gn.start());
 
