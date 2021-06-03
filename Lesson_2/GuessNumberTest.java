@@ -3,10 +3,13 @@ import java.util.Scanner;
 public class GuessNumberTest {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
-		GuessNumber gn = new GuessNumber();
-
-		Player playerFirst = new Player(scan.nextLine(), scan.nextInt());
-		Player playerSecond = new Player(scan.nextLine(), scan.nextInt());
+		
+		System.out.println("Enter first name player: ");
+		Player playerFirst = new Player(scan.nextLine());
+		System.out.println("Enter second name player: ");
+		Player playerSecond = new Player(scan.nextLine());
+		
+		GuessNumber gn = new GuessNumber(playerFirst, playerSecond);
 
 		do {
 			System.out.println(gn.start());
