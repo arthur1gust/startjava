@@ -2,34 +2,40 @@ import java.util.Scanner;
 
 public class GuessNumber {
 	private int numberComputer;
+	private int numberPlayer;
 	private Player playerFirst;
     private Player playerSecond;
 	
 	Scanner scan = new Scanner(System.in);
-	GuessNumberTest gnt = new GuessNumberTest();
 	
 	public GuessNumber(Player playerFirst, Player playerSecond) {
         this.playerFirst = playerFirst;
         this.playerSecond = playerSecond;
     }
-/*
-	private int random() {
-		numberComputer = (int) (Math.random() * 10);
-		return numberComputer;
-	}
-*/
+
+	private boolean checkNumber(Player player) {
+        System.out.print("Enter number player - " + player.getName() + ": ");
+        numberPlayer = scan.nextInt();
+        if (numberPlayer == numberComputer) {
+            System.out.print("Player - " + player.getName() + " - WIN!!! ");
+            return true;
+        } else if (numberPlayer > numberComputer) {
+            System.out.println("Your number is big");
+        } else {
+            System.out.println("Your number is less");
+        }
+        return false;
+    }
+	
 	public void start() {
 		numberComputer = (int) (Math.random() * 100);
-		//int sumFirst = random() - gnt.playerFirst.getNumber();
-		//int sumSecond = random() - gnt.playerSecond.getNumber();
-		String resultFirst;
-		if (sumFirst == 0) {
-			resultFirst = "First player won!";
-		} else if (sumSecond == 0) {
-			resultFirst = "Second player won!";
-		} else {
-			resultFirst = "No winner.";
-		}
-		return resultFirst;
-	}
+        while (true) {
+            if (checkNumber(playerFirst)) {
+                break;
+            }
+            if (checkNumber(playerSecond)) {
+                break;
+            }
+        }
+    }
 }

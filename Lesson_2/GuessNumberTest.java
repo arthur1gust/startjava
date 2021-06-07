@@ -1,25 +1,30 @@
 import java.util.Scanner;
 
 public class GuessNumberTest {
+	
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		
-		System.out.println("Enter first name player: ");
+		String checkResponse = "";
+		
+		System.out.print("Enter first name player: ");
 		Player playerFirst = new Player(scan.nextLine());
-		System.out.println("Enter second name player: ");
+		System.out.print("Enter second name player: ");
 		Player playerSecond = new Player(scan.nextLine());
 		
 		GuessNumber gn = new GuessNumber(playerFirst, playerSecond);
-
+		
 		do {
-			System.out.println(gn.start());
-
+			gn.start();
 			System.out.print("Will you want continue? [yes/no]: ");
-			scan.nextLine();
-
 			while (!scan.hasNext("yes") && !scan.hasNext("no")) {
+				checkResponse = scan.nextLine();
 				System.out.print("Will you want continue? [yes/no]: ");
-				scan.nextLine();
+				if (checkResponse.equals("yes") || checkResponse.equals("no")) {
+                    break;
+                } else {
+                    System.out.print("Enter correct value: ");
+                }
 			}
 		} while (scan.nextLine().equalsIgnoreCase("yes"));
 	}
