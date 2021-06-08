@@ -3,14 +3,14 @@ import java.util.Scanner;
 public class GuessNumber {
     private int numberComputer;
     private int numberPlayer;
-    private Player playerFirst;
-    private Player playerSecond;
+    private Player firstPlayer;
+    private Player secondPlayer;
     
     Scanner scan = new Scanner(System.in);
     
-    public GuessNumber(Player playerFirst, Player playerSecond) {
-        this.playerFirst = playerFirst;
-        this.playerSecond = playerSecond;
+    public GuessNumber(Player firstPlayer, Player secondPlayer) {
+        this.firstPlayer = firstPlayer;
+        this.secondPlayer = secondPlayer;
     }
 
     private boolean checkNumber(Player player) {
@@ -30,10 +30,10 @@ public class GuessNumber {
     public void start() {
         numberComputer = (int) (Math.random() * 100);
         while (true) {
-            if (checkNumber(playerFirst)) {
+            if (checkNumber(firstPlayer)) {
                 break;
             }
-            if (checkNumber(playerSecond)) {
+            if (checkNumber(secondPlayer)) {
                 break;
             }
         }
