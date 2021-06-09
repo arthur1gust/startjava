@@ -19,6 +19,5 @@ public class JaegerTest {
         robotFirst.drift();
         robotSecond.move();
         System.out.println(robotSecond.scanKaiju());
-
     }
 }

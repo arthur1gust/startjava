@@ -1,8 +1,7 @@
 import java.util.Scanner;
 
 public class GuessNumber {
-    private int numberComputer;
-    private int numberPlayer;
+    private int secretNumber;
     private Player firstPlayer;
     private Player secondPlayer;
     
@@ -13,29 +12,34 @@ public class GuessNumber {
         this.secondPlayer = secondPlayer;
     }
 
+    public void start() {
+        secretNumber = (int) (Math.random() * 101);
+        while (true) {
+            enterNumber(firstPlayer);
+            if (checkNumber(firstPlayer)) {
+                break;
+            }
+            enterNumber(secondPlayer);
+            if (checkNumber(secondPlayer)) {
+                break;
+            }
+        }
+    }
+
+    private void enterNumber(Player player) {
+        System.out.println("Player - " + player.getName() + " - enter number:");
+        player.setNumber(scan.nextInt());
+    }
+
     private boolean checkNumber(Player player) {
-        System.out.print("Enter number player - " + player.getName() + ": ");
-        numberPlayer = scan.nextInt();
-        if (numberPlayer == numberComputer) {
+        if (player.getNumber() == secretNumber) {
             System.out.print("Player - " + player.getName() + " - WIN!!! ");
             return true;
-        } else if (numberPlayer > numberComputer) {
+        } else if (player.getNumber() > secretNumber) {
             System.out.println("Your number is big");
         } else {
             System.out.println("Your number is less");
         }
         return false;
-    }
-    
-    public void start() {
-        numberComputer = (int) (Math.random() * 100);
-        while (true) {
-            if (checkNumber(firstPlayer)) {
-                break;
-            }
-            if (checkNumber(secondPlayer)) {
-                break;
-            }
-        }
     }
 }
