@@ -1,5 +1,6 @@
 package com.startjava.lesson_2_3_4.calculator;
 
+import java.lang.Math;
 import java.util.Scanner;
 
 public class CalculatorTest {
@@ -8,25 +9,18 @@ public class CalculatorTest {
         Scanner scan = new Scanner(System.in);
         
         String playerAnswer = "";
+        String exMath = "";
 
         do {
-            System.out.print("Enter first number: ");
-            calc.setA(scan.nextInt());
+            System.out.print("Enter math example (use space!!!): ");
+            exMath = scan.nextLine();
 
-            System.out.print("Enter second number: ");
-            calc.setB(scan.nextInt());
-
-            System.out.print("Enter operation: ");
-            calc.setSign(scan.next().charAt(0));
-
-            System.out.println(calc.calculate());
+            System.out.println("Result calculate = " + calc.calculate(exMath));
 
             System.out.print("Will you want continue? [yes/no]: ");
-            scan.nextLine();
-
             while (!scan.hasNext("yes") && !scan.hasNext("no")) {
-                System.out.print("Will you want continue? [yes/no]: ");
                 playerAnswer = scan.nextLine();
+                System.out.print("Will you want continue? [yes/no]: ");
                 if (playerAnswer.equals("yes") || playerAnswer.equals("no")) {
                     break;
                 } else {

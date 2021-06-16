@@ -1,67 +1,31 @@
 package com.startjava.lesson_2_3_4.calculator;
 
+import java.lang.Math;
+import java.util.Scanner;
+
 public class Calculator {
-    private int a;
-    private int b;
-    private char sign;
-    private int result;
+    public double calculate(String mathExample) {
+        String[] enterExample = mathExample.split(" ");
 
-    public int getA() {
-        return a;
-    }
-
-    public void setA(int a) {
-        this.a = a;
-    }
-
-    public int getB() {
-        return b;
-    }
-
-    public void setB(int b) {
-        this.b = b;
-    }
-
-    public char getSign() {
-        return sign;
-    }
-
-    public void setSign(char sign) {
-        this.sign = sign;
-    }
-
-    public int getResult() {
-        return result;
-    }
-
-    public int calculate() {
-        result = 0;
+        int a = Integer.parseInt(enterExample[0]);
+        char sign = enterExample[1].charAt(0);
+        int b = Integer.parseInt(enterExample[2]);
         switch (sign) {
             case '+':
-                result = a + b;
-                break;
+                return Math.addExact(a, b);
             case '-':
-                result = a - b;
-                break;
+                return Math.subtractExact(a, b);
             case '*':
-                result = a * b;
-                break;
+                return Math.multiplyExact(a, b);
             case '/':
-                result = a / b;
-                break;
+                return Math.floorDiv(a, b);
             case '^':
-                result = 1;
-                for (int i = 1; i <= b; i++) {
-                    result *= a;
-                }
-                break;
+                return Math.pow(a, b);
             case '%':
-                result = a % b;
-                break;
+                return Math.floorMod(a, b);
             default:
-                System.out.println("Введите другую операцию");
-                break;
+                System.out.println("Enter other math example");
+                return 0;
         }
-        return result;
     }
 }
