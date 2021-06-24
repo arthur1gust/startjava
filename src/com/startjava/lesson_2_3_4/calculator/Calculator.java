@@ -4,12 +4,12 @@ import java.lang.Math;
 import java.util.Scanner;
 
 public class Calculator {
-    public double calculate(String mathExample) {
-        String[] enterExample = mathExample.split(" ");
+    public double calculate(String mathExpression) {
+        String[] splitExpression = mathExpression.split(" ");
 
-        int a = Integer.parseInt(enterExample[0]);
-        char sign = enterExample[1].charAt(0);
-        int b = Integer.parseInt(enterExample[2]);
+        int a = Integer.parseInt(splitExpression[0]);
+        char sign = splitExpression[1].charAt(0);
+        int b = Integer.parseInt(splitExpression[2]);
         switch (sign) {
             case '+':
                 return Math.addExact(a, b);
