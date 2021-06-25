@@ -9,7 +9,7 @@ public class GuessNumber {
     private Player secondPlayer;
 
     private int checkNumber;
-    private int point;
+    private int attempt;
     private boolean checkWin;
     
     Scanner scan = new Scanner(System.in);
@@ -24,53 +24,46 @@ public class GuessNumber {
 
         secretNumber = (int) (Math.random() * 101);
         checkWin = false;
-        point = 1;
+        attempt = 1;
 
-        while (!checkWin && point <= 10) {
+        while (!checkWin && attempt <= 10) {
             enterNumberPlayer(firstPlayer);
             checkNumbers(firstPlayer);
             enterNumberPlayer(secondPlayer);
             checkNumbers(secondPlayer);
-            point++;
+            attempt++;
         }
-    }
-
-    private int enterNumber(Player player) {
-        System.out.print(player.getName() + ", This your " + point + " attempt, enter number: ");
-            checkNumber = scan.nextInt();
-            return checkNumber;
     }
 
     private void enterNumberPlayer(Player player) {
-        int number = enterNumber(player);
-        player.setNumber(point, number);
+        System.out.print(player.getName() + ", This your " + attempt + " attempt, enter number: ");
+        int number = scan.nextInt();
+        player.setNumber(attempt, number);
     }
 
     private void checkNumbers(Player player) {
-        if (point == 10) {
+        if (attempt == 10) {
             System.out.println("Player, " + player.getName() + ", lost attempts ");
-            endGame(player);
+            displayNumbers(player);
         }
-        
-        if (player.getNumber(point) == secretNumber) {
-            System.out.println("WIN!!! Player, " + player.getName() + ", guess number: " + player.getNumber(point) + " with " + point + " attempt ");
-            checkWin = true;
-            endGame(player);
-        } else if (player.getNumber(point) < secretNumber) {
-            System.out.println("Your number is less!");
+
+        if (player.getNumber(attempt) != secretNumber) {
+            String compare = player.getNumber(attempt) > secretNumber ? "big" : "less";
+            System.out.println("This number " + compare + ", than guess PC !");
         } else {
-            System.out.println("Your number is big!");
+            System.out.println("WIN!!! Player, " + player.getName() + ", guess number: " + player.getNumber(attempt) + " with " + attempt + " attempt ");
+            checkWin = true;
+            displayNumbers(player);
         }
     }
 
-    private void endGame(Player player) {
-        displayShow(player);
-    }
-
-    private void displayShow(Player player) {
-        int[] numbers = player.getNumbers(point);
+    private void displayNumbers(Player player) {
+        int[] numbers = player.getNumbers(attempt);
         System.out.println("Player, " + player.getName() + ", entered numbers: " );
-        System.out.println(Arrays.toString(numbers));
+        for(int i: numbers) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
     }
 }
 

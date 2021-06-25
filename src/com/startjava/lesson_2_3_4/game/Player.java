@@ -14,15 +14,15 @@ public class Player {
         return name;
     }
 
-    public void setNumber(int point, int number) {
-        this.numbers[point - 1] = number;
+    public void setNumber(int index, int number) {
+        numbers[index - 1] = number;
     }
 
-    public int getNumber(int point) {
-        return numbers[point - 1];
+    public int getNumber(int index) {
+        return numbers[index - 1];
     }
 
-    public int[] getNumbers(int point) {
-        return Arrays.copyOf(numbers, point);
+    public int[] getNumbers(int index) {
+        return Arrays.copyOf(numbers, index);
     }
 }

@@ -21,7 +21,6 @@ public class GuessNumberTest {
             System.out.print("Will you want continue? [yes/no]: ");
             while (!scan.hasNext("yes") && !scan.hasNext("no")) {
                 playerAnswer = scan.nextLine();
-                System.out.print("Will you want continue? [yes/no]: ");
                 if (playerAnswer.equals("yes") || playerAnswer.equals("no")) {
                     break;
                 } else {
