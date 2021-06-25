@@ -27,43 +27,54 @@ public class GuessNumber {
         attempt = 1;
 
         while (!checkWin && attempt <= 10) {
-            enterNumberPlayer(firstPlayer);
-            checkNumbers(firstPlayer);
-            enterNumberPlayer(secondPlayer);
-            checkNumbers(secondPlayer);
+            if (checkWin == false) {
+                enterNumber(firstPlayer);
+                checkNumbers(firstPlayer);
+            }
+            if (checkWin == false) {
+                enterNumber(secondPlayer);
+                checkNumbers(secondPlayer);
+            }
             attempt++;
         }
+        displayNumbers(firstPlayer);
+        displayNumbers(secondPlayer);
+
+        cancellation(firstPlayer);
+        cancellation(secondPlayer);
     }
 
-    private void enterNumberPlayer(Player player) {
+    private void enterNumber(Player player) {
         System.out.print(player.getName() + ", This your " + attempt + " attempt, enter number: ");
         int number = scan.nextInt();
         player.setNumber(attempt, number);
     }
 
     private void checkNumbers(Player player) {
-        if (attempt == 10) {
+        if (attempt == 10 && !checkWin) {
             System.out.println("Player, " + player.getName() + ", lost attempts ");
-            displayNumbers(player);
         }
 
         if (player.getNumber(attempt) != secretNumber) {
-            String compare = player.getNumber(attempt) > secretNumber ? "big" : "less";
+            String compare = player.getNumber(attempt) > secretNumber ? "more" : "less";
             System.out.println("This number " + compare + ", than guess PC !");
         } else {
             System.out.println("WIN!!! Player, " + player.getName() + ", guess number: " + player.getNumber(attempt) + " with " + attempt + " attempt ");
             checkWin = true;
-            displayNumbers(player);
         }
     }
 
     private void displayNumbers(Player player) {
         int[] numbers = player.getNumbers(attempt);
         System.out.println("Player, " + player.getName() + ", entered numbers: " );
-        for(int i: numbers) {
-            System.out.print(i + " ");
+        for(int number: numbers) {
+            System.out.print(number + " ");
         }
         System.out.println();
+    }
+
+    private void cancellation(Player player) {
+        player.cancellation(attempt);
     }
 }
 

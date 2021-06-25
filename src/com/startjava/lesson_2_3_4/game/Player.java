@@ -25,4 +25,8 @@ public class Player {
     public int[] getNumbers(int index) {
         return Arrays.copyOf(numbers, index);
     }
+
+    public void cancellation(int index) {
+        Arrays.fill(numbers, 0, index - 1, 0);
+    }
 }

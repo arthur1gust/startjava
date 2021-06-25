@@ -8,7 +8,7 @@ public class CalculatorTest {
         Calculator calc = new Calculator();
         Scanner scan = new Scanner(System.in);
         
-        String playerAnswer = "";
+        String userAnswer = "";
         String mathExpression = "";
 
         do {
@@ -19,8 +19,8 @@ public class CalculatorTest {
 
             System.out.print("Will you want continue? [yes/no]: ");
             while (!scan.hasNext("yes") && !scan.hasNext("no")) {
-                playerAnswer = scan.nextLine();
-                if (!playerAnswer.equals("yes") || !playerAnswer.equals("no")) {
+                userAnswer = scan.nextLine();
+                if (!userAnswer.equals("yes") || !userAnswer.equals("no")) {
                     System.out.print("Enter correct value: ");
                 }
             }
