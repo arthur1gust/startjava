@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 public class Player {
     private String name;
+    private int attempt;
     private int[] numbers = new int[10];
 
     public Player(String name) {
@@ -26,7 +27,8 @@ public class Player {
         return Arrays.copyOf(numbers, index);
     }
 
-    public void cancellation(int index) {
-        Arrays.fill(numbers, 0, index - 1, 0);
+    public void clear() {
+        Arrays.fill(numbers, 0, attempt, 0);
+        attempt = 1;
     }
 }

@@ -40,8 +40,8 @@ public class GuessNumber {
         displayNumbers(firstPlayer);
         displayNumbers(secondPlayer);
 
-        cancellation(firstPlayer);
-        cancellation(secondPlayer);
+        firstPlayer.clear();
+        secondPlayer.clear();
     }
 
     private void enterNumber(Player player) {
@@ -51,7 +51,7 @@ public class GuessNumber {
     }
 
     private void checkNumbers(Player player) {
-        if (attempt == 10 && !checkWin) {
+        if (attempt == 10) {
             System.out.println("Player, " + player.getName() + ", lost attempts ");
         }
 
@@ -71,10 +71,6 @@ public class GuessNumber {
             System.out.print(number + " ");
         }
         System.out.println();
-    }
-
-    private void cancellation(Player player) {
-        player.cancellation(attempt);
     }
 }
 
