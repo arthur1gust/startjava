@@ -29,6 +29,6 @@ public class Player {
 
     public void clear() {
         Arrays.fill(numbers, 0, attempt, 0);
-        attempt = 0;
+        attempt = 1;
     }
 }
