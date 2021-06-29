@@ -26,17 +26,18 @@ public class GuessNumber {
         checkWin = false;
         attempt = 1;
 
-        while (!checkWin && attempt <= 10) {
-            if (checkWin == false) {
+        do {
+            if (!checkWin) {
                 enterNumber(firstPlayer);
                 checkNumbers(firstPlayer);
             }
-            if (checkWin == false) {
+            if (!checkWin) {
                 enterNumber(secondPlayer);
                 checkNumbers(secondPlayer);
             }
             attempt++;
-        }
+        } while (!checkWin && attempt <= 10);
+
         displayNumbers(firstPlayer);
         displayNumbers(secondPlayer);
 
@@ -52,7 +53,7 @@ public class GuessNumber {
 
     private void checkNumbers(Player player) {
         if (attempt == 10) {
-            System.out.println("Player, " + player.getName() + ", lost attempts ");
+            System.out.println("Player, " + player.getName() + ", last attempts ");
         }
 
         if (player.getNumber(attempt) != secretNumber) {
