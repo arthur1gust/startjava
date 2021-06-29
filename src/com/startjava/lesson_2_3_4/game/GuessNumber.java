@@ -10,7 +10,6 @@ public class GuessNumber {
 
     private int checkNumber;
     private int attempt;
-    private boolean checkWin;
     
     Scanner scan = new Scanner(System.in);
     
@@ -23,24 +22,22 @@ public class GuessNumber {
         System.out.println("Every player have 10 attempts");
 
         secretNumber = (int) (Math.random() * 101);
-        checkWin = false;
         attempt = 1;
 
         do {
-            if (!checkWin) {
-                enterNumber(firstPlayer);
-                checkNumbers(firstPlayer);
+            enterNumber(firstPlayer);
+            if (checkNumbers(firstPlayer)) {
+                break;
             }
-            if (!checkWin) {
-                enterNumber(secondPlayer);
-                checkNumbers(secondPlayer);
+            enterNumber(secondPlayer);
+            if (checkNumbers(secondPlayer)) {
+                break;
             }
             attempt++;
-        } while (!checkWin && attempt <= 10);
+        } while (attempt < 11);
 
         displayNumbers(firstPlayer);
         displayNumbers(secondPlayer);
-
         firstPlayer.clear();
         secondPlayer.clear();
     }
@@ -51,9 +48,10 @@ public class GuessNumber {
         player.setNumber(attempt, number);
     }
 
-    private void checkNumbers(Player player) {
+    private boolean checkNumbers(Player player) {
         if (attempt == 10) {
             System.out.println("Player, " + player.getName() + ", last attempts ");
+            return true;
         }
 
         if (player.getNumber(attempt) != secretNumber) {
@@ -61,8 +59,9 @@ public class GuessNumber {
             System.out.println("This number " + compare + ", than guess PC !");
         } else {
             System.out.println("WIN!!! Player, " + player.getName() + ", guess number: " + player.getNumber(attempt) + " with " + attempt + " attempt ");
-            checkWin = true;
-        }
+            return true;
+        } 
+        return false;
     }
 
     private void displayNumbers(Player player) {
