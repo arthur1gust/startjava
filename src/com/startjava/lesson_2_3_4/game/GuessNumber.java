@@ -8,7 +8,6 @@ public class GuessNumber {
     private Player firstPlayer;
     private Player secondPlayer;
 
-    private int checkNumber;
     private int attempt;
     
     Scanner scan = new Scanner(System.in);
@@ -49,18 +48,16 @@ public class GuessNumber {
     }
 
     private boolean checkNumbers(Player player) {
-        if (attempt == 10) {
-            System.out.println("Player, " + player.getName() + ", last attempts ");
+        if (player.getNumber(attempt) == secretNumber) {
+            System.out.println("WIN!!! Player, " + player.getName() + ", guess number: " + player.getNumber(attempt) + " with " + attempt + " attempt ");
             return true;
         }
-
-        if (player.getNumber(attempt) != secretNumber) {
+        if (attempt < 11) {
             String compare = player.getNumber(attempt) > secretNumber ? "more" : "less";
             System.out.println("This number " + compare + ", than guess PC !");
         } else {
-            System.out.println("WIN!!! Player, " + player.getName() + ", guess number: " + player.getNumber(attempt) + " with " + attempt + " attempt ");
-            return true;
-        } 
+            System.out.println("Player, " + player.getName() + ", last attempts ");
+        }
         return false;
     }
 
